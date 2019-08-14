@@ -1,0 +1,15 @@
+<li [class]="getClass()">
+    <div>
+        <p class="date"><i>{{ created_at | date: 'MM/dd/yyyy, h:mm a' }}</i></p>
+        <h3>{{ title }}</h3>
+    </div>
+    <p>
+        {{ content }}
+    </p>
+    <div class="btn-toolbar">
+        <button type="button" class="btn btn-success"
+                (click)="loveItsFunction(1)">Love it !</button>
+        <button type="button" class="btn btn-danger"
+                (click)="loveItsFunction(-1)">Don't love it !</button>
+    </div>
+</li>
