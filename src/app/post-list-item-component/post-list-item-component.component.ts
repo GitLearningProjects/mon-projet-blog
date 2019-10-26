@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { getCurrencySymbol } from '@angular/common';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-post-list-item-component',
@@ -8,6 +9,9 @@ import { getCurrencySymbol } from '@angular/common';
 })
 export class PostListItemComponentComponent implements OnInit {
 
+  // Les attributs personnalisés
+
+  @Input() id: number;
   @Input() title: string;
   @Input() content: string;
   @Input() loveIts: number;
@@ -30,10 +34,19 @@ export class PostListItemComponentComponent implements OnInit {
       return "list-group-item";
   }
 
-  constructor() {
-
+  constructor(private postService: PostService) {
+    
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+  }
+
+  // Supprimer l'élément
+  onDelete(){
+    console.log("test");
+    this.postService.deletePost(this.id);
   }
 }
