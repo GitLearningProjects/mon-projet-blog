@@ -55,7 +55,12 @@ export class PostService {
     };
     postObject.title = title;
     postObject.content = content;
-    postObject.id = this.posts[(this.posts.length -1)].id +1;
+    
+    if(this.posts.length == 0)
+      postObject.id = 0;
+    else
+      postObject.id = this.posts[(this.posts.length -1)].id +1;
+    
     this.posts.push(postObject);
     this.emitPostSubject();
   }

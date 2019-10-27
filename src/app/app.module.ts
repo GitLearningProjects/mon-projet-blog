@@ -25,6 +25,10 @@ const appRoutes = [
   {
     path: '',
     component: PostListComponentComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'posts'
   }
 ]
 @NgModule({
