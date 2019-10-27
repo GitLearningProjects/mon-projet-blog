@@ -17,6 +17,7 @@ export class PostListItemComponentComponent implements OnInit {
   @Input() loveIts: number;
   @Input() created_at: Date;
 
+
   // Fonction qui met à jour les loveIts
   loveItsFunction(update: number){
     
@@ -40,6 +41,7 @@ export class PostListItemComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   ngOnDestroy(){
