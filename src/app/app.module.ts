@@ -11,6 +11,7 @@ import { PostService } from '../app/services/post.service';
 import { NewPostComponent } from './new-post/new-post.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 
 const appRoutes = [
@@ -23,12 +24,17 @@ const appRoutes = [
     component: NewPostComponent
   },
   {
+    path: 'not-found',
+    component: FourOhFourComponent
+  },
+  {
     path: '',
-    component: PostListComponentComponent
+    redirectTo: '/posts',
+    pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'posts'
+    redirectTo: 'not-found'
   }
 ]
 @NgModule({
@@ -37,7 +43,8 @@ const appRoutes = [
     PostListComponentComponent,
     PostListItemComponentComponent,
     NewPostComponent,
-    HeaderComponent
+    HeaderComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
