@@ -10,6 +10,7 @@ import { PostService } from '../app/services/post.service';
 import { NewPostComponent } from './new-post/new-post.component';
 import { HeaderComponent } from './header/header.component';
 
+
 const appRoutes = [
   {
     path: 'posts',

@@ -79,4 +79,12 @@ export class PostService {
     return post;
   }
 
+  // Mettre à jour les love it
+  updateLovesIt(id: number, loveIts: number){
+    const toUpdate = this.getPostById(id);
+    const toUpdateIndex = this.posts.indexOf(toUpdate);
+    this.posts[toUpdateIndex].loveIts = loveIts;
+    this.emitPostSubject();
+  }
+
 }

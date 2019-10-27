@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+// TODO - Implement the "New post template"
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',

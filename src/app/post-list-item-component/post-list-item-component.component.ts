@@ -21,7 +21,8 @@ export class PostListItemComponentComponent implements OnInit {
   loveItsFunction(update: number){
     
     this.loveIts = this.loveIts + (update);
-    console.log(this.loveIts);
+    this.postService.updateLovesIt(this.id, this.loveIts);
+    
   }
 
   // À défaut d'utiliser [ngClass]
@@ -46,7 +47,6 @@ export class PostListItemComponentComponent implements OnInit {
 
   // Supprimer l'élément
   onDelete(){
-    console.log("test");
     this.postService.deletePost(this.id);
   }
 }
